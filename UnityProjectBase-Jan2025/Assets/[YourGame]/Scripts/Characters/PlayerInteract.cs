@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
+    public Items Item;
 
     // Update is called once per frame
     void Update()
@@ -18,6 +19,14 @@ public class PlayerInteract : MonoBehaviour
             {
                     npcInteractable.Interact();
             }
+            else if (collider.TryGetComponent(out DoorInteractable doorInteractable))
+            {
+                doorInteractable.Interact();
+            }
+            else if (collider.TryGetComponent(out ItemController item))
+            {
+                    item.Interact();
+                }
 
 
         }
