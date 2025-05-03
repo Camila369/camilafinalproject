@@ -11,6 +11,13 @@ public class PlayerInteract : MonoBehaviour
     public Image[] slotImage;
     public int[] slotAmount;
 
+    private InterfaceController iController;
+
+    private void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     public virtual void Update()
     { 
@@ -58,4 +65,6 @@ public class PlayerInteract : MonoBehaviour
 
         
     }
+
+
 }
