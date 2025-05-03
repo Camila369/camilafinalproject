@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1729171460512817623}
   - component: {fileID: 5081346806896258639}
   - component: {fileID: 24491402959157276}
+  - component: {fileID: 3301068152822400813}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -352,6 +353,21 @@ MonoBehaviour:
   <DampTime>k__BackingField: 0.1
   <Animator>k__BackingField: {fileID: 5125051828923805470}
   <CharacterMovement>k__BackingField: {fileID: 1729171460512817623}
+--- !u!114 &3301068152822400813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125051828923805462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d7a2bf6a4a6f342b1563d72efe870a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
+  slotImage: []
+  slotAmount: 
 --- !u!1 &6733817657768287667
 GameObject:
   m_ObjectHideFlags: 0

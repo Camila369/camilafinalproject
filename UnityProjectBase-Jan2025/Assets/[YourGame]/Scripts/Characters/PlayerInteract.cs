@@ -1,11 +1,18 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.UI;
+
 
 public class PlayerInteract : MonoBehaviour
 {
-    public Items Item;
+    //public Items Item;
+    public Items[] slots;
+    public Image[] slotImage;
+    public int[] slotAmount;
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     { 
     
         if(Input.GetKeyDown(KeyCode.E)) //when player presses E to interact
@@ -23,10 +30,28 @@ public class PlayerInteract : MonoBehaviour
             {
                 doorInteractable.Interact();
             }
-            else if (collider.TryGetComponent(out ItemController item))
+            else if (collider.TryGetComponent(out ItemPickup item))
             {
-                    item.Interact();
-                }
+
+
+                    for (int i = 0; i < slots.Length; i++)
+                    {
+                        //verify if item is on the inventory
+                        if (slots[i] == null || slots[i].name == item.transform.GetComponent<ItemPickup>().ObjectType.name)
+                        {
+                            slots[i] = item.transform.GetComponent<ItemPickup>().ObjectType;
+                            slotAmount[i]++;
+                            slotImage[i].sprite = slots[i].icon;
+                            Destroy(item.transform.gameObject);
+                            break; // stop the loop
+
+                        }
+
+                    }
+                
+
+
+            }
 
 
         }
