@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DoorInteractable : MonoBehaviour
+public class DoorInteractable : PlayerInteract
 {
     public void Interact()
     {

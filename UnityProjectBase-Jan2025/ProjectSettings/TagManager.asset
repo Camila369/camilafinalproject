@@ -7,7 +7,7 @@ TagManager:
   - CameraTrigger
   - currentCamera
   - CameraDisabled
-  - ' CameraDisabled'
+  - Interactable
   layers:
   - Default
   - TransparentFX
