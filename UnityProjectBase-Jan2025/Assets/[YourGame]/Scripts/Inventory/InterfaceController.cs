@@ -6,15 +6,9 @@ public class InterfaceController : MonoBehaviour
 {
 
     public GameObject inventoryPanel;
-    //public TMP_Text itemText;
     bool invActive;
 
-    private void Start()
-    {
-        //itemText.text = null;
-    }
-
-    // Update is called once per frame
+    // open inventory
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I)) //when player presses I 
