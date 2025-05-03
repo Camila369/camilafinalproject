@@ -1,12 +1,16 @@
 using TMPro;
+using UIComponents;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InterfaceController : MonoBehaviour
 {
 
-    public GameObject inventoryPanel;
-    bool invActive;
+    [SerializeField] private GameObject inventoryPanel;
+    private bool invActive;
+    private bool isOpen;
+
+
 
     // open inventory
     void Update()
@@ -15,7 +19,19 @@ public class InterfaceController : MonoBehaviour
         {
 
             invActive =! invActive;
+            if (!isOpen) //open the inventory
+            {
+                Time.timeScale = 0f; //pause time
+                isOpen = true;
+            }
+            else if (isOpen)
+            {
+                Time.timeScale = 1f;
+                isOpen = false;
+            }
+            
             inventoryPanel.SetActive(invActive);
+
 
         }
         if (invActive)
