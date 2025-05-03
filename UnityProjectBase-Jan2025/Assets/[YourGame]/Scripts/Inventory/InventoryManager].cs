@@ -1,12 +1,17 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    public List<Items> items = new List<Items>();
+    public List<Items> Items = new List<Items>();
     [SerializeField] private GameObject InventoryCanvas;
+
+    public Transform ItemContent;
+    public GameObject InventoryItem;
 
     private void Awake()
     {
@@ -15,12 +20,12 @@ public class InventoryManager : MonoBehaviour
 
     public void Add(Items item)
     {
-        items.Add(item);
+        Items.Add(item);
     }
 
     public void Remove(Items item)
     {
-        items.Remove(item);
+        Items.Remove(item);
     }
 
     void Update()
@@ -28,11 +33,14 @@ public class InventoryManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I)) //when player presses I 
         {
+            
             //check if inventory is open
             if (InventoryCanvas.activeInHierarchy == false)
             {
+                ListItems();
                 //open inventory
                 InventoryCanvas.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
             }
             else if (InventoryCanvas.activeInHierarchy == true)
             {
@@ -43,4 +51,20 @@ public class InventoryManager : MonoBehaviour
         }
 
     }
+
+    public void ListItems()
+    {
+        foreach (var item in Items)
+        {
+            GameObject obj = Instantiate(InventoryItem, ItemContent);
+            var itemName = obj.transform.Find("Items/ItemName").GetComponent<TMP_Text>();
+            var itemIcon = obj.transform.Find("Items/ItemSprite").GetComponent<Image>();
+
+            itemName.text = item.ItemName;
+            itemIcon.sprite = item.icon;
+
+        }
+        
+    }
 }
+

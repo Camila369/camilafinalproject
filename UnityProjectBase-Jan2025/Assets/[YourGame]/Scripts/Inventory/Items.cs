@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Items : ScriptableObject
 {
-    
+    //Objects
         public int id;
-        public string itemName;
-        public string itemSprite;
+        public string ItemName;
+        public Sprite icon; //ItemSprite
         public int sellvalue;
 
 }
