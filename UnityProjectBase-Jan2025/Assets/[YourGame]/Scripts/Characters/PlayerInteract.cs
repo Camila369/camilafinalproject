@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEditor.Rendering;
+using TMPro;
 
 
 public class PlayerInteract : MonoBehaviour
@@ -12,7 +13,7 @@ public class PlayerInteract : MonoBehaviour
     public Image[] slotImage;
     public int[] slotAmount;
     [SerializeField] private float interactRange = 1f;
-
+    [SerializeField] private TextMeshProUGUI interactext;
 
 
     // Update is called once per frame
@@ -25,42 +26,54 @@ public class PlayerInteract : MonoBehaviour
             foreach (Collider collider in colliderArray)
             {
 
-                if (Input.GetKeyDown(KeyCode.E)) //when player presses E to interact
-                {
+                
+                
 
                     if (collider.TryGetComponent(out NPCInteractable npcInteractable))
                     {
 
-                        npcInteractable.Interact();
+                        interactext.text = npcInteractable.GetInteractText();
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            npcInteractable.Interact();
+                        }
 
                     }
                     else if (collider.TryGetComponent(out DoorInteractable doorInteractable))
                     {
 
-                        doorInteractable.Interact();
+                        interactext.text = doorInteractable.GetInteractText();
+
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            doorInteractable.Interact();
+                        }
 
                     }
                     else if (collider.TryGetComponent(out ItemPickup item))
                     {
+                        interactext.text = item.GetInteractText();
 
-                        for (int i = 0; i < slots.Length; i++)
+                        if (Input.GetKeyDown(KeyCode.E))
                         {
-                            //verify if item is on the inventory
-                            if (slots[i] == null || slots[i].name == item.transform.GetComponent<ItemPickup>().ObjectType.name)
+                            for (int i = 0; i < slots.Length; i++)
                             {
-                                slots[i] = item.transform.GetComponent<ItemPickup>().ObjectType;
-                                slotAmount[i]++;
-                                slotImage[i].sprite = slots[i].icon;
-                                Destroy(item.transform.gameObject);
-                                break; // stop the loop
+                                //verify if item is on the inventory
+                                if (slots[i] == null || slots[i].name == item.transform.GetComponent<ItemPickup>().ObjectType.name)
+                                {
+                                    slots[i] = item.transform.GetComponent<ItemPickup>().ObjectType;
+                                    slotAmount[i]++;
+                                    slotImage[i].sprite = slots[i].icon;
+                                    Destroy(item.transform.gameObject);
+                                    break; // stop the loop
+
+                                }
 
                             }
-
                         }
 
-
                     }
-                }
+                
             }
 
     }
@@ -73,7 +86,6 @@ public class PlayerInteract : MonoBehaviour
 
             if (collider.TryGetComponent(out NPCInteractable npcInteractable))
             {
-
                 return npcInteractable;
 
             }
@@ -84,7 +96,6 @@ public class PlayerInteract : MonoBehaviour
             }
             else if (collider.TryGetComponent(out ItemPickup item))
             {
-
                 return item;
 
             }

@@ -8,6 +8,8 @@ TagManager:
   - currentCamera
   - CameraDisabled
   - Interactable
+  - Door
+  - NPC
   layers:
   - Default
   - TransparentFX

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class ItemPickup : PlayerInteract
 {
-    //public Items Item;
+    [SerializeField] private string interactText = "Collect";
     public Items ObjectType;
-    public void Interact()
-    {
-        InventoryManager.Instance.Add(ObjectType);
-        Destroy(gameObject);
 
+    public string GetInteractText()
+    {
+        return interactText;
     }
+
 }

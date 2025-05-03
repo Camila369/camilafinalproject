@@ -369,6 +369,7 @@ MonoBehaviour:
   slotImage: []
   slotAmount: 
   interactRange: 1
+  interactext: {fileID: 0}
 --- !u!1 &6733817657768287667
 GameObject:
   m_ObjectHideFlags: 0
