@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ public class InventoryManager : MonoBehaviour
     public void Remove(Items item)
     {
         Items.Remove(item);
+        Destroy(gameObject);
     }
 
     void Update()
@@ -37,9 +39,9 @@ public class InventoryManager : MonoBehaviour
             //check if inventory is open
             if (InventoryCanvas.activeInHierarchy == false)
             {
+                InventoryCanvas.SetActive(true);
                 ListItems();
                 //open inventory
-                InventoryCanvas.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
             }
             else if (InventoryCanvas.activeInHierarchy == true)
@@ -49,16 +51,16 @@ public class InventoryManager : MonoBehaviour
             }
 
         }
-
     }
 
     public void ListItems()
     {
+
         foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
-            var itemName = obj.transform.Find("Items/ItemName").GetComponent<TMP_Text>();
-            var itemIcon = obj.transform.Find("Items/ItemSprite").GetComponent<Image>();
+            var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
+            var itemIcon = obj.transform.Find("icon").GetComponent<Image>();
 
             itemName.text = item.ItemName;
             itemIcon.sprite = item.icon;

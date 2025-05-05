@@ -365,8 +365,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d7a2bf6a4a6f342b1563d72efe870a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   slotImage: []
+  slotButton: []
   slotAmount: 
   interactRange: 1
   interactext: {fileID: 0}

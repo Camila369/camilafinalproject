@@ -1,5 +1,6 @@
 using TMPro;
 using UIComponents;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,10 +8,9 @@ public class InterfaceController : MonoBehaviour
 {
 
     [SerializeField] private GameObject inventoryPanel;
-    private bool invActive;
+    public bool invActive;
     private bool isOpen;
-
-
+    private PlayerInteract playerInteract;
 
     // open inventory
     void Update()
@@ -40,5 +40,5 @@ public class InterfaceController : MonoBehaviour
         }
     }
 
-    
+
 }

@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c0f3d90aee63214883cbb4fe687156f, type: 3}
-  m_Name: Food
+  m_Name: New Item
   m_EditorClassIdentifier: 
-  id: 1
-  ItemName: Food
-  icon: {fileID: 21300000, guid: 484552918bd4a8b4eb7ce5f263a8f75c, type: 3}
+  id: 0
+  ItemName: 
+  icon: {fileID: 0}
   sellvalue: 0
-  CanRemove: 1
-  CanTradeorSell: 1
+  CanRemove: 0
+  CanTradeorSell: 0
+  Itemtype: 0
