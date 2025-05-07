@@ -322,7 +322,6 @@ MonoBehaviour:
   <Rigidbody>k__BackingField: {fileID: 5125051828923805465}
   <NavMeshAgent>k__BackingField: {fileID: 5125051828923805466}
   <CapsuleCollider>k__BackingField: {fileID: 5125051828923805464}
-  spriteRenderer: {fileID: 0}
 --- !u!114 &5081346806896258639
 MonoBehaviour:
   m_ObjectHideFlags: 0

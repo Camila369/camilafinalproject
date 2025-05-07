@@ -16,3 +16,6 @@ MonoBehaviour:
   ItemName: Key
   icon: {fileID: 21300000, guid: fab6324d150aa7946900ff1b3a7b1454, type: 3}
   sellvalue: 0
+  CanRemove: 0
+  CanTradeorSell: 0
+  Itemtype: 4

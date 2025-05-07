@@ -16,3 +16,6 @@ MonoBehaviour:
   ItemName: Clue
   icon: {fileID: 21300000, guid: 054850746d7ac464895465453326ff42, type: 3}
   sellvalue: 0
+  CanRemove: 0
+  CanTradeorSell: 0
+  Itemtype: 5

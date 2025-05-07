@@ -1,3 +1,4 @@
+using CharacterMovement;
 using System;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
@@ -6,10 +7,17 @@ using UnityEngine.UI;
 
 public class SlotButtonInventory : MonoBehaviour
 {
-    private PlayerInteract playerInteract;
+
     [SerializeField] public int buttonIndex;
     [SerializeField] Button button;
     private Items ItemType;
+    PlayerInteract playerInteract = new PlayerInteract();
+    Items item;
+
+    private void Awake()
+    {
+        item = playerInteract.slots[buttonIndex];
+    }
 
     public void Initialize()
     {
@@ -25,13 +33,16 @@ public class SlotButtonInventory : MonoBehaviour
     }
     public void UseItem() //click to use the item in the inventory
     {
-        Items item = GetComponent<PlayerInteract>().slots[buttonIndex];
 
         if (item != null ) 
         {
             Debug.Log("Slot not empty");
             //check item type
             Debug.Log("Item used");
+        }
+        else
+        {
+            Debug.Log("Slot empty");
         }
     }
 }

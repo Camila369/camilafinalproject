@@ -16,3 +16,6 @@ MonoBehaviour:
   ItemName: Gun
   icon: {fileID: 21300000, guid: 4404539628bc4f24d871de1d2ea8df74, type: 3}
   sellvalue: 0
+  CanRemove: 0
+  CanTradeorSell: 0
+  Itemtype: 2
