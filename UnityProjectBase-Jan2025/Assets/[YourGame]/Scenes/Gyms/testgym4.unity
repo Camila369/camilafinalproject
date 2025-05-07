@@ -16801,6 +16801,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -24.148146
       objectReference: {fileID: 0}
+    - target: {fileID: 2412784199352181163, guid: 967b0609d4defd9479cc900831c5e540,
+        type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1358018837}
     - target: {fileID: 2570941560730512635, guid: 967b0609d4defd9479cc900831c5e540,
         type: 3}
       propertyPath: BlendHint

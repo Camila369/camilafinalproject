@@ -16,10 +16,10 @@ GameObject:
   - component: {fileID: 5125051828923805466}
   - component: {fileID: 5125051828923805468}
   - component: {fileID: 5040456817135988803}
-  - component: {fileID: 1729171460512817623}
   - component: {fileID: 5081346806896258639}
   - component: {fileID: 24491402959157276}
   - component: {fileID: 3301068152822400813}
+  - component: {fileID: 2412784199352181163}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -241,87 +241,6 @@ MonoBehaviour:
       Data3: -1367347271
       Data4: 113292409
     Path: event:/SFX/Footstep
---- !u!114 &1729171460512817623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5125051828923805462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c86861b32db2274ca2a510c6099c31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 5
-  <Acceleration>k__BackingField: 10
-  <TurnSpeed>k__BackingField: 15
-  <StoppingDistance>k__BackingField: 0.25
-  <LookInMoveDirection>k__BackingField: 1
-  <ControlRotation>k__BackingField: 1
-  <Fix3DSpriteRotation>k__BackingField: 1
-  <ParentToSurface>k__BackingField: 0
-  <Gravity>k__BackingField: -20
-  <JumpHeight>k__BackingField: 2.25
-  <AirControl>k__BackingField: 0.1
-  <AirTurning>k__BackingField: 1
-  <Height>k__BackingField: 1.8
-  <Radius>k__BackingField: 0.3
-  <GroundCheckOffset>k__BackingField: 0.1
-  <GroundCheckDistance>k__BackingField: 0.4
-  <MaxSlopeAngle>k__BackingField: 40
-  <CoyoteMaxJumpDistance>k__BackingField: 0.5
-  <GroundMask>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 1
-  <MinGroundedVelocity>k__BackingField: 5
-  OnGrounded:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5040456817135988803}
-        m_TargetAssemblyTypeName: FMODVFS.FMODFootsteps, FMODVFS
-        m_MethodName: PlayFootstep
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnFootstep:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5040456817135988803}
-        m_TargetAssemblyTypeName: FMODVFS.FMODFootsteps, FMODVFS
-        m_MethodName: PlayFootstep
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  <StepHeight>k__BackingField: 0.3
-  <StepHeightAllowance>k__BackingField: 0.1
-  <StepHeightForwardOffset>k__BackingField: 0.05
-  <EnableAvoidance>k__BackingField: 0
-  <SpeedVariation>k__BackingField: 0.5
-  <NeighborDistance>k__BackingField: 3
-  <CornerNeighborDistance>k__BackingField: 1
-  <NeighborMask>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 0
-  <MaxNeighbors>k__BackingField: 8
-  <IsClampedToNavMesh>k__BackingField: 1
-  <ClampLookAheadTime>k__BackingField: 0.25
-  <ClampSearchRadius>k__BackingField: 1
-  <Rigidbody>k__BackingField: {fileID: 5125051828923805465}
-  <NavMeshAgent>k__BackingField: {fileID: 5125051828923805466}
-  <CapsuleCollider>k__BackingField: {fileID: 5125051828923805464}
 --- !u!114 &5081346806896258639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CursorMode>k__BackingField: 1
   <LookInCameraDirection>k__BackingField: 0
-  <Movement>k__BackingField: {fileID: 1729171460512817623}
+  <Movement>k__BackingField: {fileID: 2412784199352181163}
 --- !u!114 &24491402959157276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DampTime>k__BackingField: 0.1
   <Animator>k__BackingField: {fileID: 5125051828923805470}
-  <CharacterMovement>k__BackingField: {fileID: 1729171460512817623}
+  <CharacterMovement>k__BackingField: {fileID: 2412784199352181163}
 --- !u!114 &3301068152822400813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +301,88 @@ MonoBehaviour:
   slotAmount: 
   interactRange: 1
   interactext: {fileID: 0}
+--- !u!114 &2412784199352181163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125051828923805462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea53a5a2ab3305d47a7ca8cca3d4da38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Speed>k__BackingField: 5
+  <Acceleration>k__BackingField: 10
+  <TurnSpeed>k__BackingField: 15
+  <StoppingDistance>k__BackingField: 0.25
+  <LookInMoveDirection>k__BackingField: 1
+  <ControlRotation>k__BackingField: 1
+  <Fix3DSpriteRotation>k__BackingField: 1
+  <ParentToSurface>k__BackingField: 0
+  <Gravity>k__BackingField: -20
+  <JumpHeight>k__BackingField: 2.25
+  <AirControl>k__BackingField: 0.1
+  <AirTurning>k__BackingField: 1
+  <Height>k__BackingField: 1.8
+  <Radius>k__BackingField: 0.3
+  <GroundCheckOffset>k__BackingField: 0.1
+  <GroundCheckDistance>k__BackingField: 0.4
+  <MaxSlopeAngle>k__BackingField: 40
+  <CoyoteMaxJumpDistance>k__BackingField: 0.5
+  <GroundMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1
+  <MinGroundedVelocity>k__BackingField: 5
+  OnGrounded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5040456817135988803}
+        m_TargetAssemblyTypeName: FMODExtensions.FMODFootsteps, FMODExtensions
+        m_MethodName: PlayFootstep
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFootstep:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5040456817135988803}
+        m_TargetAssemblyTypeName: FMODExtensions.FMODFootsteps, FMODExtensions
+        m_MethodName: PlayFootstep
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <StepHeight>k__BackingField: 0.3
+  <StepHeightAllowance>k__BackingField: 0.1
+  <StepHeightForwardOffset>k__BackingField: 0.05
+  <EnableAvoidance>k__BackingField: 0
+  <SpeedVariation>k__BackingField: 0.5
+  <NeighborDistance>k__BackingField: 3
+  <CornerNeighborDistance>k__BackingField: 1
+  <NeighborMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 0
+  <MaxNeighbors>k__BackingField: 8
+  <IsClampedToNavMesh>k__BackingField: 1
+  <ClampLookAheadTime>k__BackingField: 0.25
+  <ClampSearchRadius>k__BackingField: 1
+  <Rigidbody>k__BackingField: {fileID: 5125051828923805465}
+  <NavMeshAgent>k__BackingField: {fileID: 5125051828923805466}
+  <CapsuleCollider>k__BackingField: {fileID: 5125051828923805464}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &6733817657768287667
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,8 +442,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402679259452473171}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 6.4704747, z: -24.148146}
+  m_LocalRotation: {x: 0.13052616, y: -0, z: -0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: 6.4704742, z: -24.148146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

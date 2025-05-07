@@ -1,9 +1,9 @@
 using CharacterMovement;
 using UnityEngine;
 
-public class SpriteFlip : CharacterMovement3D
+public class CharacterMovement25D : CharacterMovement3D
 {
-
+    [SerializeField] public SpriteRenderer spriteRenderer;
     protected override void Update()
     {
         base.Update();
