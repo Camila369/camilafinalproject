@@ -24,17 +24,18 @@ public abstract class Weapon : MonoBehaviour
         Animator = GetComponentInParent<Animator>();
     }
 
-    public virtual bool TryAttack(Vector3 aimPosition, GameObject instigator, int team)
+    public virtual bool TryAttack(Vector3 aimPosition, GameObject instigator, int team, bool sneakAttack)
     {
+
         // check cooldown
         if (Time.time < _lastActivationTime + Cooldown) return false;
         _lastActivationTime = Time.time;
 
-        Attack(aimPosition, instigator, team);
+        Attack(aimPosition, instigator, team, sneakAttack);
         return true;
     }
 
-    public virtual void Attack(Vector3 aimPosition, GameObject instigator, int team)
+    public virtual void Attack(Vector3 aimPosition, GameObject instigator, int team, bool sneakAttack)
     {
         // do attack
         // play oneshot FMOD event

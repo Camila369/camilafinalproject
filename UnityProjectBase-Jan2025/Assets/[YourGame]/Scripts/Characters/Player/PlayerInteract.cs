@@ -115,107 +115,107 @@ public class PlayerInteract : MonoBehaviour
 
     }
 
-    public int OnClicked(Button button) //click to use the item in the inventory
-    {
-        int buttonIndex;
-        // get the button index
-        buttonIndex = Array.IndexOf(slotButton, button);
+    //public int OnClicked(Button button) //click to use the item in the inventory
+    //{
+    //    int buttonIndex;
+    //    // get the button index
+    //    buttonIndex = Array.IndexOf(slotButton, button);
 
-        hasClicked = true;
+    //    hasClicked = true;
 
-        SelectItem();
+    //    SelectItem();
 
-        return buttonIndex;
-    }
+    //    return buttonIndex;
+    //}
 
-    public void CompareArrays(Items itemClicked, Button button, bool HasItem)
-    {
+    //public void CompareArrays(Items itemClicked, Button button, bool HasItem)
+    //{
 
-        Debug.Log("CompareArrays");
+    //    Debug.Log("CompareArrays");
 
-        int slotIndex = Array.IndexOf(slots, itemClicked);
-        slotIndex = OnClicked(button);
+    //    int slotIndex = Array.IndexOf(slots, itemClicked);
+    //    slotIndex = OnClicked(button);
 
-        if (itemClicked != null) // if the button index has an item
-        {
-            HasItem = true;
-            Debug.Log("Has Item");
-            slotFull = HasItem;
+    //    if (itemClicked != null) // if the button index has an item
+    //    {
+    //        HasItem = true;
+    //        Debug.Log("Has Item");
+    //        slotFull = HasItem;
 
-        }
-        else if (itemClicked == null) // if the button index doesn't have an item
-        {
-            Debug.Log("Is empty");
-            HasItem = false;
-            slotButton[slotIndex + 1].interactable = false;
-            slotFull = HasItem;
-        }
+    //    }
+    //    else if (itemClicked == null) // if the button index doesn't have an item
+    //    {
+    //        Debug.Log("Is empty");
+    //        HasItem = false;
+    //        slotButton[slotIndex + 1].interactable = false;
+    //        slotFull = HasItem;
+    //    }
 
-    }
+    //}
 
-    public void ItemClicked(Button button, int buttonIndex)
-    {
-        buttonIndex = Array.IndexOf(slotButton, button);
-        int slotIndex = slotinventory.buttonIndex;
-        slotIndex = Array.IndexOf(slots, slots[slotIndex]);
+    //public void ItemClicked(Button button, int buttonIndex)
+    //{
+    //    buttonIndex = Array.IndexOf(slotButton, button);
+    //    int slotIndex = slotinventory.buttonIndex;
+    //    slotIndex = Array.IndexOf(slots, slots[slotIndex]);
 
-        if (slots[slotIndex] != null) // if the button index has an item
-        {
-            slotFull = true;
-            Debug.Log("Has Item");
-            //check which item it is
-            //change the text of the buttons according to the item
-            //open screen
-            //change use item button
-            //allow to delete item or not
+    //    if (slots[slotIndex] != null) // if the button index has an item
+    //    {
+    //        slotFull = true;
+    //        Debug.Log("Has Item");
+    //        //check which item it is
+    //        //change the text of the buttons according to the item
+    //        //open screen
+    //        //change use item button
+    //        //allow to delete item or not
 
-        }
-        else if (slots[slotIndex] == null) // if the button index doesn't have an item
-        {
-            Debug.Log("Is empty");
-            slotFull = false;
-            slotButton[slotIndex + 1].interactable = false;
+    //    }
+    //    else if (slots[slotIndex] == null) // if the button index doesn't have an item
+    //    {
+    //        Debug.Log("Is empty");
+    //        slotFull = false;
+    //        slotButton[slotIndex + 1].interactable = false;
             
-        }
-    }
+    //    }
+    //}
 
-    public void UseItemAtIndex(int index)
-    {
-        if (index >= 0 && index < slotAmount[12])
-        {
-            slotButton[index].interactable = true;
-            Debug.Log("Use Button");
-            //slots[index].Use();
-        }
-        else
-        {
-            slotButton[index].interactable = false;
-            Debug.LogWarning("Invalid inventory index");
-        }
-    }
+    //public void UseItemAtIndex(int index)
+    //{
+    //    if (index >= 0 && index < slotAmount[12])
+    //    {
+    //        slotButton[index].interactable = true;
+    //        Debug.Log("Use Button");
+    //        //slots[index].Use();
+    //    }
+    //    else
+    //    {
+    //        slotButton[index].interactable = false;
+    //        Debug.LogWarning("Invalid inventory index");
+    //    }
+    //}
 
-    private void SelectItem()
-    {
-        Debug.Log("Select Item");
+    //private void SelectItem()
+    //{
+    //    Debug.Log("Select Item");
 
-        if (slotFull == true)
-        {
-            //check which item it is
-            //change the text of the buttons according to the item
-            //open screen
-            Debug.Log("Use Item");
-            slotFull = false;
-            //change use item button
-            //allow to delete item or not
+    //    if (slotFull == true)
+    //    {
+    //        //check which item it is
+    //        //change the text of the buttons according to the item
+    //        //open screen
+    //        Debug.Log("Use Item");
+    //        slotFull = false;
+    //        //change use item button
+    //        //allow to delete item or not
 
-        }
-        else if (!slotFull) 
-        {
-            Debug.Log("Don't open");
-        }
+    //    }
+    //    else if (!slotFull) 
+    //    {
+    //        Debug.Log("Don't open");
+    //    }
 
         
-    }
+    //}
 
 
 
