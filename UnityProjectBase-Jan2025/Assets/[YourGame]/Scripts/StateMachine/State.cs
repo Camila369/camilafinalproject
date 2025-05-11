@@ -1,11 +1,14 @@
+using CharacterMovement;
 using UnityEngine;
+using System;
+using Sirenix.OdinInspector;
 
 public abstract class State : MonoBehaviour
 {
     [field: Header("State Machine")]
     //protected EnemyController enemy;
     //[SerializeField] public States _currentState = States.Idle;
-    protected StateMachine stateMachine;
+    protected StateMachine _stateMachine;
 
     [field: Header("Animation")]
     protected Animator animationController;
@@ -15,6 +18,16 @@ public abstract class State : MonoBehaviour
     [field: Header("Control")]
     protected bool isExitingState;
     protected float startTime;
+    protected EnemyController enemy;
+    protected PlayerController player;
+    protected float _timer = 0f;
+
+    [Header("States")]
+    protected IdleState idleState = new IdleState();
+    protected PatrolState patrolState = new PatrolState();
+    protected ChaseState chaseState = new ChaseState();
+    protected AttackState attackState = new AttackState();
+    protected DeadState deadState = new DeadState();
 
     //public enum States
     //{
@@ -43,6 +56,12 @@ public abstract class State : MonoBehaviour
     //    }
     //}
 
+    public virtual void FixedUpdate() { }
+
+    public virtual void Update() 
+    {
+        _timer += Time.deltaTime;
+    }
 
     public virtual void Enter()
     {

@@ -10,6 +10,7 @@ public class EnemyController : Controller
 {
     [Header("Enemy Stats")]
     [SerializeField] private float _viewDistance = 5f;
+    private bool canSeePlayer = false;
     // ternary conditional operator
     // [if] ? [true] : [false]
     // this reads: if _currentState is not null, return the current state name, else return empty string
@@ -28,7 +29,7 @@ public class EnemyController : Controller
 
     [Header("Components")]
     private PlayerController Player;
-    public Waypoint[] Waypoints { get; private set; }
+    [SerializeField] public Waypoint[] Waypoints { get; private set; }
 
 
     private void Start()
@@ -64,7 +65,7 @@ public class EnemyController : Controller
         return false;
     }
 
-    public bool ISTargetVisible()
+    public bool IsTargetVisible()
     {
         return IsTargetInRange(_viewDistance);
     }

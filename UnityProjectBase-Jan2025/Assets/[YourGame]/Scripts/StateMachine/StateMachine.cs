@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public abstract class StateMachine
+public class StateMachine
 {
     //public State<T> CurrentState { get; private set; }
     public State CurrentState;
@@ -20,7 +20,15 @@ public abstract class StateMachine
         CurrentState.Enter();
     }
 
+    public void FixedUpdate()
+    {
+        CurrentState?.FixedUpdate();
+    }
 
+    public void Update()
+    {
+        CurrentState?.Update();
+    }
 
 
 }
