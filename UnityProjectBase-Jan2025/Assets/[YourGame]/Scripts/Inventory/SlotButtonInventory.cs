@@ -11,12 +11,12 @@ public class SlotButtonInventory : MonoBehaviour
     [SerializeField] public int buttonIndex;
     [SerializeField] Button button;
     private Items ItemType;
-    PlayerInteract playerInteract = new PlayerInteract();
-    Items item;
+    PlayerInteract playerInteract;
+    Items item => playerInteract.slots[buttonIndex];
 
-    private void Awake()
+    private void Start()
     {
-        item = playerInteract.slots[buttonIndex];
+        playerInteract = FindAnyObjectByType<MyPlayerController>().GetComponent<PlayerInteract>();
     }
 
     public void Initialize()
@@ -26,8 +26,6 @@ public class SlotButtonInventory : MonoBehaviour
 
     public void OnClicked() //click to use the item in the inventory
     {
-        //playerInteract.ItemClicked(button, buttonIndex);
-        //playerInteract.UseItemAtIndex(buttonIndex);
         Debug.Log("Item Clicked =" + buttonIndex);
         UseItem();
     }
