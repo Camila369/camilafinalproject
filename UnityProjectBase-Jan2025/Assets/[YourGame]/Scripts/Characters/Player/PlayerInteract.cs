@@ -37,7 +37,7 @@ public class PlayerInteract : MonoBehaviour
 
             if (collider.TryGetComponent(out NPCInteractable npcInteractable))
             {
-
+                
                 interactext.text = npcInteractable.GetInteractText();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -62,7 +62,7 @@ public class PlayerInteract : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    
+
 
                     for (int i = 0; i < slots.Length; i++)
                     {
@@ -78,13 +78,13 @@ public class PlayerInteract : MonoBehaviour
                         }
 
                     }
+
                 }
+
 
             }
 
         }
-
-
 
     }
 

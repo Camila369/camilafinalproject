@@ -9,11 +9,14 @@ public class InterfaceController : CharacterMovementBase
 {
 
     [SerializeField] private GameObject inventoryPanel;
+    [SerializeField] private GameObject inventoryMenu;
+    [SerializeField] private GameObject ItemDescriptionPanel;
+    [SerializeField] private GameObject ItemUsePanel;
     public bool invActive;
     private bool isOpen;
     private PlayerInteract playerInteract;
     //CharacterMovement3D turn = new CharacterMovement3D();
-    
+
     // open inventory
     void Update()
     {
@@ -27,21 +30,25 @@ public class InterfaceController : CharacterMovementBase
                 isOpen = true;
                 //CanTurn = false;
             }
-            else if (isOpen)
+            else if (isOpen) // close the inventory
             {
                 Time.timeScale = 1f;
                 isOpen = false;
                 //CanTurn = true;
+                ItemDescriptionPanel.SetActive(false);
+                ItemUsePanel.SetActive(false);
             }
             
+            inventoryMenu.SetActive(invActive);
             inventoryPanel.SetActive(invActive);
-
 
         }
         if (invActive)
         {
             Cursor.lockState = CursorLockMode.None;
         }
+
+
     }
 
 
