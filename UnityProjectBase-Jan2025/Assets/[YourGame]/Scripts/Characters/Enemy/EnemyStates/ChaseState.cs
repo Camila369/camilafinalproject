@@ -9,7 +9,7 @@ public class ChaseState : State
     {
         base.Update();
 
-        Weapon weapon = enemy.Weapons[0];
+        Weapon weapon = enemy.weapon;
 
         PlayerController target = player;
 

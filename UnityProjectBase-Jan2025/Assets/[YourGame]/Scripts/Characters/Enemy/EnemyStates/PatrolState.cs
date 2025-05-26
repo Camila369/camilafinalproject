@@ -5,7 +5,6 @@ using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class PatrolState : State
 {
-    private Waypoint _waypoints;
     private Waypoint _waypoint0;
     private Waypoint _waypoint1;
     private Waypoint _waypoint2;
@@ -18,10 +17,9 @@ public class PatrolState : State
     public override void Enter()
     {
         base.Enter();
-        _waypoints = enemy.Waypoints[Random.Range(0, enemy.Waypoints.Length)]; // waypoint that is closer to the enemy
-        _waypoint0 = enemy.Waypoints[0];
-        _waypoint1 = enemy.Waypoints[1];
-        _waypoint2 = enemy.Waypoints[2];
+        _waypoint0 = enemy.Waypoint0;
+        _waypoint1 = enemy.Waypoint1;
+        _waypoint2 = enemy.Waypoint2;
 
         float distance0 = Vector3.Distance(enemy.transform.position, _waypoint0.Position);
         float distance1 = Vector3.Distance(enemy.transform.position, _waypoint1.Position);

@@ -20,10 +20,6 @@ public class StateMachine
         CurrentState.Enter();
     }
 
-    public void FixedUpdate()
-    {
-        CurrentState?.FixedUpdate();
-    }
 
     public void Update()
     {

@@ -28,15 +28,19 @@ public class EnemyController : Controller
     DeadState deadState = new DeadState();
 
     [Header("Components")]
-    private PlayerController Player;
-    [SerializeField] public Waypoint[] Waypoints { get; private set; }
+    private MyPlayerController Player;
+
+    [Header("Waypoints")]
+    [SerializeField] public Waypoint Waypoint0;
+    [SerializeField] public Waypoint Waypoint1;
+    [SerializeField] public Waypoint Waypoint2;
+
+    [Header("Weapon")]
+    [ShowInInspector] public Weapon weapon;
 
 
     private void Start()
     {
-
-        // find all waypoints in all scenes
-        Waypoints = FindObjectsByType<Waypoint>(FindObjectsSortMode.None);
 
         if (TryGetComponent(out Health health))
         {

@@ -6,14 +6,13 @@ using Sirenix.OdinInspector;
 public abstract class State : MonoBehaviour
 {
     [field: Header("State Machine")]
-    //protected EnemyController enemy;
     //[SerializeField] public States _currentState = States.Idle;
     protected StateMachine _stateMachine;
 
-    [field: Header("Animation")]
-    protected Animator animationController;
-    protected string animationName;
-    protected bool isAnimationFinished;
+    //[field: Header("Animation")]
+    //protected Animator animationController;
+    //protected string animationName;
+    //protected bool isAnimationFinished;
 
     [field: Header("Control")]
     protected bool isExitingState;
@@ -23,11 +22,11 @@ public abstract class State : MonoBehaviour
     protected float _timer = 0f;
 
     [Header("States")]
-    protected IdleState idleState = new IdleState();
-    protected PatrolState patrolState = new PatrolState();
-    protected ChaseState chaseState = new ChaseState();
-    protected AttackState attackState = new AttackState();
-    protected DeadState deadState = new DeadState();
+    protected IdleState idleState;
+    protected PatrolState patrolState;
+    protected ChaseState chaseState;
+    protected AttackState attackState;
+    protected DeadState deadState;
 
     //public enum States
     //{
@@ -70,15 +69,15 @@ public abstract class State : MonoBehaviour
         startTime = Time.time;
 
         //animation
-        isAnimationFinished = false;
-        animationController.SetBool(animationName, true);
+        //isAnimationFinished = false;
+        //animationController.SetBool(animationName, true);
     }
     public virtual void Exit()
     {
         isExitingState = true;
 
         //animation
-        if (!isAnimationFinished) isAnimationFinished = true;
-        animationController.SetBool(animationName, false);
+        //if (!isAnimationFinished) isAnimationFinished = true;
+        //animationController.SetBool(animationName, false);
     }
 }

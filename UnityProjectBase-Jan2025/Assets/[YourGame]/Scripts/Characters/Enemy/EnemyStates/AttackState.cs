@@ -15,7 +15,7 @@ public class AttackState : State
 
     public void Attack()
     {
-        Weapon weapon = enemy.Weapons[0];
+        Weapon weapon = enemy.weapon;
         weapon.TryAttack(player.transform.position, enemy.gameObject, 1, false);
         _timer = 0f;
     }
@@ -25,7 +25,7 @@ public class AttackState : State
     {
         base.Update();
 
-        Weapon weapon = enemy.Weapons[0];
+        Weapon weapon = enemy.weapon;
         float range = weapon.Range;
         float cooldown = 1f / weapon.FireRate;
 
